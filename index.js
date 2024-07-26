@@ -13,7 +13,7 @@ server.use(cors());
 server.use( '/api',ProductRouter);
 server.use(express.static(path.resolve(__dirname,process.env.PUBLIC_DIR)));
 server.use('*',(req,res)=>{
-  res.sendFile(path.resolve(__dirname,'build','index.html'));
+  res.sendFile(path.resolve(__dirname,process.env.PUBLIC_DIR,'index.html'));
 })
 
 //connect to db
